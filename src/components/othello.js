@@ -1,6 +1,4 @@
 import React from 'react'
-import request from 'request'
-import cheerio from 'cheerio'
 
 import * as engine from './reversi/engine.js';
 
