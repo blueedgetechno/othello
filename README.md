@@ -2,4 +2,4 @@
 
 Othello in ReactJs
 
-![view](.\img\view.png)
+![view](https://raw.githubusercontent.com/blueedgetechno/othello/master/img/view.png)
