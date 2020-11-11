@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.github-badge{
+  filter: drop-shadow(-1px 1px 3px rgba(0, 0, 0, 0.77));
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
