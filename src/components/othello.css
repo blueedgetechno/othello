@@ -17,6 +17,37 @@
   /* padding: 10px 0; */
 }
 
+.passed {
+  animation: shake 40ms ease-in-out 20 alternate;
+  visibility: hidden;
+}
+
+@keyframes shake {
+  from {
+    visibility: visible;
+    transform: rotateZ(-5deg);
+  }
+
+  to {
+    visibility: visible;
+    transform: rotateZ(5deg);
+  }
+}
+
+.points b{
+  display: none;
+}
+
+.passed b {
+  display: block;
+  font-size: 2em;
+  font-weight: 900;
+  color: rgba(48, 116, 233, 0.85);
+  text-shadow: 5px 5px rgba(124, 124, 124, 0.29);
+  -webkit-text-stroke: #2e3df3;
+  -webkit-text-stroke-width: 2px;
+}
+
 .points {
   /* height: 100%; */
   display: flex;
@@ -25,25 +56,28 @@
   margin: 10px 0;
 }
 
-.othello-utils{
+.othello-utils {
   display: flex;
 }
 
-.game-options{
+.game-options {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
 .outlined {
-  border: 3px solid #888;
-  filter: drop-shadow(4px 4px 0 rgba(184, 184, 184, 0.53));
-  /* background: rgb(20, 78, 210); */
-  /* background: linear-gradient(145deg, rgba(20, 78, 210, 1) 0%, rgba(75, 130, 255, 1) 50%, rgba(165, 194, 255, 1) 100%); */
+  --outline: #888;
+  border: 3px solid var(--outline);
+  filter: drop-shadow(3px 3px 0 rgba(184, 184, 184, 0.53));
+}
+
+.humanPlayer{
+  --outline: #1e4cf2;
 }
 
 .points span {
-  font-size: 1.8em;
+  font-size: 2.2em;
   font-weight: 600;
   color: #30393e;
   margin: 0 30px;
@@ -60,19 +94,19 @@
   box-shadow: 3px 3px 8px rgba(136, 136, 136, 0.47);
 }
 
-.gamescreen{
+.gamescreen {
   display: flex;
   align-self: flex-start;
   width: max-content;
 }
 
-.oth-options{
+.oth-options {
   display: flex;
   flex-direction: column;
   padding: 0 10px;
 }
 
-.playoption{
+.playoption {
   padding: 5px;
   margin-bottom: 20px;
   font-weight: bolder;
@@ -82,7 +116,7 @@
   align-items: center;
 }
 
-.playoption .svgcontainer{
+.playoption .svgcontainer {
   width: 40px;
   height: 40px;
   padding: 5px;
@@ -147,7 +181,7 @@
   place-items: center;
 }
 
-.last{
+.last {
   position: absolute;
   width: 25%;
   height: 25%;

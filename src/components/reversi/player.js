@@ -1,7 +1,14 @@
 // github:tom-weatherhead/thaw-reversi-engine.ts/src/player.ts
-import { getRandomArrayElement } from 'thaw-common-utilities.ts';
 import { blackPlayerToken, boardArea, boardHeight, boardWidth, whitePlayerToken } from './board';
 import { PlayerColour } from './player-colour';
+
+export function getRandomArrayElement(array) {
+    if (!array.length) {
+        return undefined;
+    }
+    return array[Math.floor(Math.random() * array.length)];
+}
+
 export class Player {
     constructor(colour, game, piecePopulation) {
         let token;

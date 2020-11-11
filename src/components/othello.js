@@ -1,5 +1,6 @@
 import React from 'react'
 
+// https://github.com/tom-weatherhead/thaw-reversi-engine.ts
 import * as engine from './reversi/engine.js';
 
 import {
@@ -27,7 +28,6 @@ export default class Othello extends React.PureComponent {
         [-1,-1,-1,-1,-1,-1,-1,-1],
         [-1,-1,-1,-1,-1,-1,-1,-1],
         [-1,-1,-1,-1,-1,-1,-1,-1]
-
       ],
       prev: [
         [-1,-1,-1,-1,-1,-1,-1,-1],
@@ -123,6 +123,13 @@ export default class Othello extends React.PureComponent {
 
   isValid(i,j){
     return i>=0 && i<8 && j>=0 && j<8
+  }
+
+  passAnimation(){
+    document.getElementById('passContainer').classList.add("passed");
+    setTimeout(()=>{
+      document.getElementById('passContainer').classList.remove("passed");
+    },800)
   }
 
   isAllowed(i,j){
@@ -248,6 +255,7 @@ export default class Othello extends React.PureComponent {
         setTimeout(()=>{
           this.setState({a:a, passes: this.state.passes+1, turn: this.state.turn^1},()=>{
             this.validMoves()
+            this.passAnimation()
             if(this.state.turn==(this.state.player^1) && this.state.human==0){
               setTimeout(()=>{
                 this.opponent()
@@ -280,7 +288,7 @@ export default class Othello extends React.PureComponent {
     var boardString = engine.createInitialState(st);
     var player = 'X';
     console.log(player);
-    var maxPly = 5;
+    var maxPly = 9;
 
     try {
       var result = engine.findBestMove(boardString, player, maxPly);
@@ -403,8 +411,9 @@ export default class Othello extends React.PureComponent {
     return (
       <div className="othello-game">
         <div className="score">
-          <div className={this.state.turn==0?"points outlined":"points"}><div className="demopiece"></div><span>{this.state.black}</span></div>
-          <div className={this.state.turn==1?"points outlined":"points"}><div className="demopiece white"></div><span>{this.state.white}</span></div>
+          <div className={(this.state.turn==0?"points outlined":"points") + (this.state.human==0&&this.state.player==0?" humanPlayer":"")}><div className="demopiece"></div><span>{this.state.black}</span></div>
+          <div className="points" id="passContainer"><b>PASS</b></div>
+          <div className={(this.state.turn==1?"points outlined":"points") + (this.state.human==0&&this.state.player==1?" humanPlayer":"")}><div className="demopiece white"></div><span>{this.state.white}</span></div>
         </div>
         <div className="gamescreen">
           <div className="board">
