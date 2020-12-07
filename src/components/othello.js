@@ -470,6 +470,7 @@ export default class Othello extends React.PureComponent {
                 <SwitchColor/>
               </div>
               <span>
+                {this.state.player==1?"White":"Black"}
                 Black
               </span>
             </div>
