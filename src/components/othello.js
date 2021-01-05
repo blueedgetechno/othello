@@ -471,7 +471,6 @@ export default class Othello extends React.PureComponent {
               </div>
               <span>
                 {this.state.player==1?"White":"Black"}
-                Black
               </span>
             </div>
             <div className="playoption">
