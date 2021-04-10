@@ -127,9 +127,9 @@ export default class Othello extends React.PureComponent {
 
   passAnimation(){
     if(this.state.winner<0){
-      document.getElementById('passContainer').classList.remove("passed");
       document.getElementById('passContainer').classList.add("passed");
       setTimeout(()=>{
+        document.getElementById('passContainer').classList.remove("passed");
       },800)
     }
   }
