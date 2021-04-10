@@ -134,6 +134,7 @@
   width: 600px;
   height: 600px;
   border: 10px solid #1f2738;
+  background: #1c242e;
 }
 
 .winnercontainer {
@@ -174,6 +175,7 @@
 
 .box {
   /* margin: -0.1px; */
+  /* margin-bottom: -0.2px; */
   position: relative;
   background: #0eb56a;
   border: 1px solid #1c242e;

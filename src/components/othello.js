@@ -126,10 +126,12 @@ export default class Othello extends React.PureComponent {
   }
 
   passAnimation(){
-    document.getElementById('passContainer').classList.add("passed");
-    setTimeout(()=>{
+    if(this.state.winner<0){
       document.getElementById('passContainer').classList.remove("passed");
-    },800)
+      document.getElementById('passContainer').classList.add("passed");
+      setTimeout(()=>{
+      },800)
+    }
   }
 
   isAllowed(i,j){
@@ -411,9 +413,9 @@ export default class Othello extends React.PureComponent {
     return (
       <div className="othello-game">
         <div className="score">
-          <div className={(this.state.turn==0?"points outlined":"points") + (this.state.human==0&&this.state.player==0?" humanPlayer":"")}><div className="demopiece"></div><span>{this.state.black}</span></div>
+          <div className={(this.state.turn==0 && this.state.winner<0?"points outlined":"points") + (this.state.human==0&&this.state.player==0?" humanPlayer":"")}><div className="demopiece"></div><span>{this.state.black}</span></div>
           <div className="points" id="passContainer"><b>PASS</b></div>
-          <div className={(this.state.turn==1?"points outlined":"points") + (this.state.human==0&&this.state.player==1?" humanPlayer":"")}><div className="demopiece white"></div><span>{this.state.white}</span></div>
+          <div className={(this.state.turn==1 && this.state.winner<0?"points outlined":"points") + (this.state.human==0&&this.state.player==1?" humanPlayer":"")}><div className="demopiece white"></div><span>{this.state.white}</span></div>
         </div>
         <div className="gamescreen">
           <div className="board">
