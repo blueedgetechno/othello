@@ -34,7 +34,7 @@
   }
 }
 
-.points b{
+.points b {
   display: none;
 }
 
@@ -69,29 +69,29 @@
 .outlined {
   --outline: #888;
   border: 3px solid var(--outline);
-  filter: drop-shadow(3px 3px 0 rgba(184, 184, 184, 0.53));
+  filter: drop-shadow(3px 3px 0 var(--dshadow));
 }
 
-.humanPlayer{
+.humanPlayer {
   --outline: #1e4cf2;
 }
 
 .points span {
   font-size: 2.2em;
   font-weight: 600;
-  color: #30393e;
+  color: var(--tcolor);
   margin: 0 30px;
   text-align: center;
   /* line-height: 50px; */
 }
 
 .demopiece {
-  background: #222;
+  background: var(--blackColor);
   height: 50px;
   width: 50px;
   margin: 0 10px;
   border-radius: 50%;
-  box-shadow: 3px 3px 8px rgba(136, 136, 136, 0.47);
+  box-shadow: 3px 3px 8px var(--pShadow);
 }
 
 .gamescreen {
@@ -110,7 +110,8 @@
   padding: 5px;
   margin-bottom: 20px;
   font-weight: bolder;
-  color: #0f5599;
+  color: var(--tcolor);
+  font-size: 0.84em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,7 +122,8 @@
   height: 40px;
   padding: 5px;
   border-radius: 50%;
-  background: rgba(210, 210, 210, 0.61);
+  background: var(--svgBack);
+  margin-bottom: 4px;
   cursor: pointer;
   display: grid;
   place-items: center;
@@ -133,8 +135,8 @@
   grid-template-columns: auto auto auto auto auto auto auto auto;
   width: 600px;
   height: 600px;
-  border: 10px solid #1f2738;
-  background: #1c242e;
+  border: 10px solid var(--boardRim);
+  background: var(--boardRim);
 }
 
 .winnercontainer {
@@ -147,29 +149,34 @@
 
 .winnercard {
   width: 200px;
-  height: 100px;
+  height: 120px;
   text-align: center;
-  background: #ffffff;
   border-radius: 10px;
-  border: 1px solid #151924;
-  box-shadow: 5px 5px 12px rgba(74, 74, 74, 0.61);
   display: flex;
   flex-direction: column;
   vertical-align: middle;
+
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(74, 74, 74, 0.61);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .winnercard .result {
   font-size: 1.5em;
   font-weight: bolder;
   text-align: center;
-  margin: 15px;
-  color: #1f2429;
+  margin: 20px;
+  color: #eeeeee;
+  -webkit-text-stroke-width: 0.4px;
+  -webkit-text-stroke-color: #000;
 }
 
 .winnercard .again {
   font-size: 1em;
   font-weight: 600;
-  color: #484f55;
+  color: #cfcfcf;
   cursor: pointer;
 }
 

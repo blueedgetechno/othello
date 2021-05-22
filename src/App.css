@@ -1,9 +1,56 @@
-.App {
+.App{
   text-align: center;
 }
 
-.github-badge{
+body{
+  background: #fefefe;
+  --boardRim: #1f2738;
+  --pShadow: rgba(136, 136, 136, 0.36);
+  --blackColor: #222;
+  --dshadow: rgba(184, 184, 184, 0.53);
+  --tcolor: #30393e;
+  --svgBack: rgba(210, 210, 210, 0.61);
   --git-shadow: rgb(62 62 62 / 55%);
+}
+
+body[theme="dark"] {
+  background: #221f2a;
+  --boardRim: #273042;
+  --pShadow: rgba(9, 9, 9, 0.9);
+  --blackColor: #121212;
+  --dshadow: rgba(111, 107, 134, 0.35);
+  --tcolor: #b8c0e3;
+  --svgBack: rgba(185, 178, 217, 0.6);
+  --git-shadow: rgb(22 21 21 / 85%);
+}
+
+.darkmode{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.unescapeLink{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.unescapeLink a{
+  font-weight: bold;
+  text-decoration: underline;
+  color: #186bbe;
+}
+
+.moonSvg{
+  fill: #c6c9d4;
+}
+
+.github-badge{
   filter: drop-shadow(-1px 1px 3px var(--git-shadow));
 }
 

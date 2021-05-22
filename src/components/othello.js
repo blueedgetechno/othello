@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 // https://github.com/tom-weatherhead/thaw-reversi-engine.ts
 import * as engine from './reversi/engine.js';
@@ -11,7 +11,7 @@ import {
   PlayerComputer,
   LastMove,
   CheckMark
-} from './icons'
+} from './icons';
 
 import './othello.css';
 
@@ -434,7 +434,7 @@ export default class Othello extends React.PureComponent {
                     {box>=0 && this.state.showLast && i==this.state.last[0] && j==this.state.last[1]?(
                       <div className="last"></div>
                     ):null}
-                    {box==-2 && this.state.showAvail? (
+                    {box==-2 && this.state.showAvail && (this.state.turn==this.state.player || this.state.human)? (
                       <div className={this.state.turn==1 ? "avail":"avail avail-black"}></div>
                     ):null}
                   </div>
@@ -488,7 +488,7 @@ export default class Othello extends React.PureComponent {
                 <CheckMark/>
               </div>
               <span>
-                Available move
+                Valid move
               </span>
             </div>
           </div>
